@@ -62,11 +62,12 @@
             width: 10px;
             height: 10px;
             opacity: 0;
+            pointer-events: none;
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .fade-in {
@@ -83,22 +84,18 @@
         }
         
         .quiz-option.correct {
-            background-color: #bbf7d0;
-            border-color: #22c55e;
+            background-color: #bbf7d0 !important;
+            border-color: #22c55e !important;
         }
         
         .quiz-option.incorrect {
-            background-color: #fecaca;
-            border-color: #ef4444;
+            background-color: #fecaca !important;
+            border-color: #ef4444 !important;
         }
         
         .hero-pattern {
             background-color: #4158D0;
             background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-        }
-        
-        .math-icon {
-            filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
         }
         
         .character {
@@ -151,7 +148,7 @@
         </header>
         
         <!-- Main Menu -->
-        <div id="main-menu" class="flex flex-col items-center">
+        <div id="main-menu" class="flex flex-col items-center fade-in">
             <div class="w-full max-w-4xl mb-10 rounded-2xl overflow-hidden shadow-2xl">
                 <div class="hero-pattern p-8 md:p-12 text-white text-center relative">
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">Bilangan Cacah sampai 10.000</h2>
@@ -249,21 +246,7 @@
                         </svg>
                         <h2 class="text-xl font-bold mt-2">Materi</h2>
                     </div>
-                    <div class="p-6 text-center relative">
-                        <!-- Character -->
-                        <div class="absolute -top-12 right-2 character">
-                            <svg class="w-20 h-20" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="64" cy="64" r="60" fill="#FFD54F"/>
-                                <circle cx="44" cy="50" r="8" fill="white"/>
-                                <circle cx="44" cy="50" r="4" fill="#333"/>
-                                <circle cx="84" cy="50" r="8" fill="white"/>
-                                <circle cx="84" cy="50" r="4" fill="#333"/>
-                                <path d="M40 80 C55 95, 75 95, 88 80" stroke="#333" stroke-width="4" fill="none"/>
-                                <path d="M30 30 C40 10, 88 10, 98 30" stroke="#FF6F00" stroke-width="8" fill="none"/>
-                                <path d="M30 35 L30 55 M98 35 L98 55" stroke="#FF6F00" stroke-width="4" fill="none"/>
-                            </svg>
-                        </div>
-                        
+                    <div class="p-6 text-center">
                         <p class="text-gray-600 mb-4">Pelajari konsep bilangan cacah sampai 10.000</p>
                         <button onclick="showSection('materi')" class="btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full">
                             Mulai Belajar
@@ -278,21 +261,7 @@
                         </svg>
                         <h2 class="text-xl font-bold mt-2">Ikuti Quiz</h2>
                     </div>
-                    <div class="p-6 text-center relative">
-                        <!-- Character -->
-                        <div class="absolute -top-12 right-2 character">
-                            <svg class="w-20 h-20" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="64" cy="64" r="60" fill="#AED581"/>
-                                <circle cx="44" cy="50" r="8" fill="white"/>
-                                <circle cx="44" cy="50" r="4" fill="#333"/>
-                                <circle cx="84" cy="50" r="8" fill="white"/>
-                                <circle cx="84" cy="50" r="4" fill="#333"/>
-                                <path d="M40 80 C55 95, 75 95, 88 80" stroke="#333" stroke-width="4" fill="none"/>
-                                <path d="M64 20 L64 40 M40 40 L88 40" stroke="#558B2F" stroke-width="6" fill="none"/>
-                                <rect x="54" y="40" width="20" height="10" fill="#558B2F"/>
-                            </svg>
-                        </div>
-                        
+                    <div class="p-6 text-center">
                         <p class="text-gray-600 mb-4">Tantang dirimu dengan soal-soal menarik</p>
                         <button onclick="startQuiz()" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full">
                             Mulai Quiz
@@ -307,21 +276,7 @@
                         </svg>
                         <h2 class="text-xl font-bold mt-2">Ranking</h2>
                     </div>
-                    <div class="p-6 text-center relative">
-                        <!-- Character -->
-                        <div class="absolute -top-12 right-2 character">
-                            <svg class="w-20 h-20" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="64" cy="64" r="60" fill="#81D4FA"/>
-                                <circle cx="44" cy="50" r="8" fill="white"/>
-                                <circle cx="44" cy="50" r="4" fill="#333"/>
-                                <circle cx="84" cy="50" r="8" fill="white"/>
-                                <circle cx="84" cy="50" r="4" fill="#333"/>
-                                <path d="M64 80 A20 20 0 0 0 64 90" stroke="#333" stroke-width="4" fill="none"/>
-                                <path d="M30 30 C40 15, 88 15, 98 30" stroke="#01579B" stroke-width="8" fill="none"/>
-                                <path d="M34 30 L34 45 M94 30 L94 45" stroke="#01579B" stroke-width="4" fill="none"/>
-                            </svg>
-                        </div>
-                        
+                    <div class="p-6 text-center">
                         <p class="text-gray-600 mb-4">Lihat peringkat terbaik dari pemain</p>
                         <button onclick="showSection('ranking')" class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full">
                             Lihat Ranking
@@ -344,21 +299,6 @@
             </div>
             
             <div class="bg-white rounded-xl shadow-lg p-6 mb-8 relative">
-                <!-- Character in top right -->
-                <div class="absolute -top-10 right-10 character">
-                    <svg class="w-24 h-24" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="64" cy="64" r="60" fill="#FFD54F"/>
-                        <circle cx="44" cy="50" r="8" fill="white"/>
-                        <circle cx="44" cy="50" r="4" fill="#333"/>
-                        <circle cx="84" cy="50" r="8" fill="white"/>
-                        <circle cx="84" cy="50" r="4" fill="#333"/>
-                        <path d="M40 80 C55 95, 75 95, 88 80" stroke="#333" stroke-width="4" fill="none"/>
-                        <path d="M30 30 C40 10, 88 10, 98 30" stroke="#FF6F00" stroke-width="8" fill="none"/>
-                        <path d="M30 35 L30 55 M98 35 L98 55" stroke="#FF6F00" stroke-width="4" fill="none"/>
-                        <path class="wave" d="M100 70 L110 70" stroke="#FF6F00" stroke-width="4" fill="none"/>
-                    </svg>
-                </div>
-                
                 <div class="flex items-center mb-4">
                     <div class="bg-blue-500 rounded-full p-2 mr-3">
                         <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -366,35 +306,19 @@
                             <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-600">1. Membaca dan Menulis Bilangan Cacah sampai 10.000</h3>
+                    <h3 class="text-xl font-bold text-blue-600">1. Membaca dan Menulis Bilangan Cacah</h3>
                 </div>
                 
                 <div class="pl-12 mb-6">
                     <p class="mb-4">Bilangan cacah adalah bilangan bulat yang tidak negatif, dimulai dari 0, 1, 2, 3, dan seterusnya.</p>
                     
                     <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                        <h4 class="font-bold mb-2">Contoh Soal:</h4>
-                        <p>Helen membantu Ibu menjual makanan ringan di warung. Slamet membeli makanan ringan seharga Rp7.350,00. Slamet mempunyai pecahan uang Rp9.500,00. Slamet membayar makanan ringan tersebut dan mendapatkan kembalian sebesar Rp2.150,00.</p>
+                        <h4 class="font-bold mb-2">Contoh:</h4>
                         <ul class="list-disc pl-6 mt-2">
                             <li>Bilangan 7.350 dibaca: <span class="font-bold">tujuh ribu tiga ratus lima puluh</span></li>
                             <li>Bilangan 9.500 dibaca: <span class="font-bold">sembilan ribu lima ratus</span></li>
                             <li>Bilangan 2.150 dibaca: <span class="font-bold">dua ribu seratus lima puluh</span></li>
                         </ul>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                        <div class="number-card bg-blue-100 p-4 rounded-lg text-center">
-                            <div class="text-2xl font-bold text-blue-700">1.234</div>
-                            <div class="text-sm text-blue-600">seribu dua ratus tiga puluh empat</div>
-                        </div>
-                        <div class="number-card bg-blue-100 p-4 rounded-lg text-center">
-                            <div class="text-2xl font-bold text-blue-700">5.678</div>
-                            <div class="text-sm text-blue-600">lima ribu enam ratus tujuh puluh delapan</div>
-                        </div>
-                        <div class="number-card bg-blue-100 p-4 rounded-lg text-center">
-                            <div class="text-2xl font-bold text-blue-700">9.090</div>
-                            <div class="text-sm text-blue-600">sembilan ribu sembilan puluh</div>
-                        </div>
                     </div>
                 </div>
                 
@@ -404,58 +328,20 @@
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-600">2. Menentukan dan Menggunakan Nilai Tempat Bilangan Cacah sampai 10.000</h3>
+                    <h3 class="text-xl font-bold text-blue-600">2. Nilai Tempat Bilangan Cacah</h3>
                 </div>
                 
                 <div class="pl-12 mb-6">
                     <p class="mb-4">Setiap angka dalam bilangan memiliki nilai tempat yang berbeda.</p>
                     
                     <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                        <h4 class="font-bold mb-2">Contoh:</h4>
-                        <p>Bilangan 2.150 dibaca: dua ribu seratus lima puluh</p>
+                        <h4 class="font-bold mb-2">Contoh: Bilangan 2.150</h4>
                         <ul class="list-disc pl-6 mt-2">
-                            <li>Angka 2 menempati nilai tempat "ribuan"</li>
-                            <li>Angka 1 menempati nilai tempat "ratusan"</li>
-                            <li>Angka 5 menempati nilai tempat "puluhan"</li>
-                            <li>Angka 0 menempati nilai tempat "satuan"</li>
+                            <li>Angka 2 menempati nilai tempat "ribuan" (nilai 2000)</li>
+                            <li>Angka 1 menempati nilai tempat "ratusan" (nilai 100)</li>
+                            <li>Angka 5 menempati nilai tempat "puluhan" (nilai 50)</li>
+                            <li>Angka 0 menempati nilai tempat "satuan" (nilai 0)</li>
                         </ul>
-                    </div>
-                    
-                    <div class="overflow-x-auto mb-4">
-                        <table class="w-full border-collapse">
-                            <thead>
-                                <tr class="bg-blue-500 text-white">
-                                    <th class="border border-blue-600 p-2">Bilangan</th>
-                                    <th class="border border-blue-600 p-2">Ribuan</th>
-                                    <th class="border border-blue-600 p-2">Ratusan</th>
-                                    <th class="border border-blue-600 p-2">Puluhan</th>
-                                    <th class="border border-blue-600 p-2">Satuan</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="bg-white">
-                                    <td class="border border-blue-200 p-2 text-center font-bold">3.456</td>
-                                    <td class="border border-blue-200 p-2 text-center">3</td>
-                                    <td class="border border-blue-200 p-2 text-center">4</td>
-                                    <td class="border border-blue-200 p-2 text-center">5</td>
-                                    <td class="border border-blue-200 p-2 text-center">6</td>
-                                </tr>
-                                <tr class="bg-blue-50">
-                                    <td class="border border-blue-200 p-2 text-center font-bold">7.890</td>
-                                    <td class="border border-blue-200 p-2 text-center">7</td>
-                                    <td class="border border-blue-200 p-2 text-center">8</td>
-                                    <td class="border border-blue-200 p-2 text-center">9</td>
-                                    <td class="border border-blue-200 p-2 text-center">0</td>
-                                </tr>
-                                <tr class="bg-white">
-                                    <td class="border border-blue-200 p-2 text-center font-bold">1.025</td>
-                                    <td class="border border-blue-200 p-2 text-center">1</td>
-                                    <td class="border border-blue-200 p-2 text-center">0</td>
-                                    <td class="border border-blue-200 p-2 text-center">2</td>
-                                    <td class="border border-blue-200 p-2 text-center">5</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
                 
@@ -465,100 +351,35 @@
                             <path fill-rule="evenodd" d="M3 3a1 1 0 000 2h14a1 1 0 100-2H3zm0 6a1 1 0 000 2h14a1 1 0 100-2H3zm0 6a1 1 0 100 2h14a1 1 0 100-2H3z" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-600">3. Membandingkan dan Mengurutkan Bilangan Cacah sampai 10.000</h3>
+                    <h3 class="text-xl font-bold text-blue-600">3. Membandingkan dan Mengurutkan</h3>
                 </div>
                 
                 <div class="pl-12 mb-6">
-                    <p class="mb-4">Untuk membandingkan dua bilangan, kita gunakan tanda < (lebih kecil dari), > (lebih besar dari), atau = (sama dengan).</p>
+                    <p class="mb-4">Untuk membandingkan dua bilangan, kita gunakan tanda &lt; (lebih kecil dari), &gt; (lebih besar dari), atau = (sama dengan).</p>
                     
                     <div class="bg-blue-50 p-4 rounded-lg mb-4">
                         <h4 class="font-bold mb-2">Contoh:</h4>
-                        <p>Bandingkan bilangan berikut dan temukan yang lebih besar!</p>
                         <ul class="list-disc pl-6 mt-2">
-                            <li>5.734 dan 4.312 → 5.734 > 4.312 (5.734 lebih besar)</li>
-                            <li>5.614 dan 5.368 → 5.614 > 5.368 (5.614 lebih besar)</li>
-                            <li>7.124 dan 7.197 → 7.124 < 7.197 (7.197 lebih besar)</li>
+                            <li>5.734 dan 4.312 → 5.734 &gt; 4.312 (5.734 lebih besar)</li>
+                            <li>7.124 dan 7.197 → 7.124 &lt; 7.197 (7.197 lebih besar)</li>
                         </ul>
-                    </div>
-                    
-                    <p class="mb-2 font-bold">Cara Membandingkan:</p>
-                    <ol class="list-decimal pl-6 mb-4">
-                        <li>Bandingkan jumlah digit (angka dengan digit lebih banyak lebih besar)</li>
-                        <li>Jika jumlah digit sama, bandingkan dari digit paling kiri</li>
-                        <li>Jika digit sama, lanjutkan ke digit berikutnya</li>
-                    </ol>
-                    
-                    <p class="mb-2 font-bold">Mengurutkan Bilangan:</p>
-                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                        <p class="mb-2">Urutkan bilangan berikut dari terkecil ke terbesar: 5.734, 4.312, 5.614, 7.124</p>
-                        <p class="font-bold">Jawaban: 4.312, 5.614, 5.734, 7.124</p>
                     </div>
                 </div>
                 
                 <div class="flex items-center mb-4">
                     <div class="bg-blue-500 rounded-full p-2 mr-3">
                         <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                           <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-blue-600">4. Komposisi dan Dekomposisi Bilangan Cacah sampai 10.000</h3>
+                    <h3 class="text-xl font-bold text-blue-600">4. Komposisi dan Dekomposisi</h3>
                 </div>
                 
                 <div class="pl-12">
-                    <p class="mb-4">Komposisi adalah menyusun bilangan dari nilai tempat, sedangkan dekomposisi adalah menguraikan bilangan menjadi nilai tempat.</p>
-                    
-                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                        <h4 class="font-bold mb-2">Komposisi:</h4>
-                        <p>Diberikan suatu bilangan yang terdiri atas 4 angka yang tersusun:</p>
-                        <ul class="list-disc pl-6 mt-2">
-                            <li>Angka 6 menempati nilai tempat ribuan, nilainya 6.000</li>
-                            <li>Angka 3 menempati nilai tempat ratusan, nilainya 300</li>
-                            <li>Angka 4 menempati nilai tempat puluhan, nilainya 40</li>
-                            <li>Angka 8 menempati nilai tempat satuan, nilainya 8</li>
-                        </ul>
-                        <p class="mt-2">Jadi, bilangan yang terbentuk adalah:</p>
-                        <p class="font-bold">6 ribuan + 3 ratusan + 4 puluhan + 8 satuan = 6.348</p>
-                    </div>
-                    
-                    <div class="bg-blue-50 p-4 rounded-lg">
+                    <p class="mb-4">Komposisi adalah menyusun bilangan dari nilai tempat, sedangkan dekomposisi adalah menguraikan bilangan.</p>
+                     <div class="bg-blue-50 p-4 rounded-lg">
                         <h4 class="font-bold mb-2">Dekomposisi:</h4>
-                        <p>Diberikan bilangan 6.849.</p>
-                        <p>Untuk melihat nilai tempat dari setiap angka pada bilangan 6.849 sebagai berikut:</p>
-                        
-                        <div class="overflow-x-auto my-3">
-                            <table class="w-full border-collapse">
-                                <thead>
-                                    <tr class="bg-blue-500 text-white">
-                                        <th class="border border-blue-600 p-2" colspan="5">6.849</th>
-                                    </tr>
-                                    <tr class="bg-blue-400 text-white">
-                                        <th class="border border-blue-600 p-2">Ribuan</th>
-                                        <th class="border border-blue-600 p-2">Ratusan</th>
-                                        <th class="border border-blue-600 p-2">Puluhan</th>
-                                        <th class="border border-blue-600 p-2">Satuan</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="bg-white">
-                                        <td class="border border-blue-200 p-2 text-center">6</td>
-                                        <td class="border border-blue-200 p-2 text-center">8</td>
-                                        <td class="border border-blue-200 p-2 text-center">4</td>
-                                        <td class="border border-blue-200 p-2 text-center">9</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        
-                        <p>Berdasarkan penjelasan di atas, diperoleh bahwa:</p>
-                        <ul class="list-disc pl-6 mt-2">
-                            <li>Angka 6 menempati tempat ribuan, nilainya 6.000</li>
-                            <li>Angka 8 menempati tempat ratusan, nilainya 800</li>
-                            <li>Angka 4 menempati tempat puluhan, nilainya 40</li>
-                            <li>Angka 9 menempati tempat satuan, nilainya 9</li>
-                        </ul>
-                        <p class="mt-2 font-bold">Jadi,</p>
-                        <p>6.849 = 6 ribuan + 8 ratusan + 4 puluhan + 9 satuan</p>
-                        <p>6.849 = 6.000 + 800 + 40 + 9</p>
+                        <p>6.849 = 6000 + 800 + 40 + 9</p>
                     </div>
                 </div>
             </div>
@@ -587,23 +408,6 @@
             
             <div class="bg-white rounded-xl shadow-lg p-6 mb-8 relative">
                 <div id="quiz-start" class="text-center py-8">
-                    <!-- Character -->
-                    <div class="absolute top-0 right-10 character">
-                        <svg class="w-24 h-24" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="64" cy="64" r="60" fill="#AED581"/>
-                            <circle cx="44" cy="50" r="8" fill="white"/>
-                            <circle cx="44" cy="50" r="4" fill="#333"/>
-                            <circle cx="84" cy="50" r="8" fill="white"/>
-                            <circle cx="84" cy="50" r="4" fill="#333"/>
-                            <path d="M40 80 C55 95, 75 95, 88 80" stroke="#333" stroke-width="4" fill="none"/>
-                            <path d="M64 20 L64 40 M40 40 L88 40" stroke="#558B2F" stroke-width="6" fill="none"/>
-                            <rect x="54" y="40" width="20" height="10" fill="#558B2F"/>
-                        </svg>
-                    </div>
-                    
-                    <svg class="w-20 h-20 mx-auto text-yellow-500 mb-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
-                    </svg>
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Siap untuk Memulai Quiz?</h3>
                     <p class="text-gray-600 mb-6">Ayo uji pengetahuanmu tentang bilangan cacah sampai 10.000!</p>
                     
@@ -612,36 +416,14 @@
                         <input type="text" id="player-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Nama Kamu">
                     </div>
                     
-                    <div class="flex flex-col md:flex-row justify-center gap-4">
-                        <button onclick="beginQuiz()" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full">
-                            Mulai Quiz
-                        </button>
-                        <button onclick="showSection('materi')" class="btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full">
-                            Pelajari Materi Dulu
-                        </button>
-                    </div>
+                    <button onclick="beginQuiz()" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full">
+                        Mulai Quiz
+                    </button>
                 </div>
                 
                 <div id="quiz-questions" class="hidden">
-                    <!-- Character -->
-                    <div class="absolute top-0 right-10 character">
-                        <svg class="w-20 h-20" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="64" cy="64" r="60" fill="#AED581"/>
-                            <circle cx="44" cy="50" r="8" fill="white"/>
-                            <circle cx="44" cy="50" r="4" fill="#333"/>
-                            <circle cx="84" cy="50" r="8" fill="white"/>
-                            <circle cx="84" cy="50" r="4" fill="#333"/>
-                            <path d="M40 80 C55 95, 75 95, 88 80" stroke="#333" stroke-width="4" fill="none"/>
-                            <path d="M64 20 L64 40 M40 40 L88 40" stroke="#558B2F" stroke-width="6" fill="none"/>
-                            <rect x="54" y="40" width="20" height="10" fill="#558B2F"/>
-                        </svg>
-                    </div>
-                    
                     <div class="flex justify-between items-center mb-6">
                         <div class="flex items-center">
-                            <svg class="w-6 h-6 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path>
-                            </svg>
                             <span class="text-xl font-bold">Soal <span id="current-question">1</span> dari <span id="total-questions">10</span></span>
                         </div>
                         <div class="bg-yellow-100 text-yellow-800 py-1 px-3 rounded-full font-bold">
@@ -652,23 +434,14 @@
                     <div id="question-container" class="mb-6">
                         <p id="question-text" class="text-lg font-bold mb-4">Pertanyaan akan muncul di sini</p>
                         <div id="options-container" class="space-y-3">
-                            <!-- Options will be inserted here -->
                         </div>
                         
-                        <!-- Feedback message -->
                         <div id="feedback-message" class="feedback-message mt-4 p-3 rounded-lg text-center font-bold">
-                            <!-- Feedback will be shown here -->
                         </div>
                     </div>
                     
-                    <div class="flex justify-between">
-                        <button id="prev-btn" onclick="prevQuestion()" class="btn bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full flex items-center" disabled>
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            Sebelumnya
-                        </button>
-                        <button id="next-btn" onclick="nextQuestion()" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
+                    <div class="flex justify-end">
+                        <button id="next-btn" onclick="nextQuestion()" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full flex items-center hidden">
                             Selanjutnya
                             <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
@@ -678,25 +451,9 @@
                 </div>
                 
                 <div id="quiz-result" class="hidden text-center py-8">
-                    <div id="confetti-container" class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"></div>
+                    <div id="confetti-container" class="absolute top-0 left-0 w-full h-full overflow-hidden"></div>
                     
-                    <!-- Character -->
-                    <div class="absolute top-0 right-10 character bounce">
-                        <svg class="w-24 h-24" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="64" cy="64" r="60" fill="#FFD54F"/>
-                            <circle cx="44" cy="50" r="8" fill="white"/>
-                            <circle cx="44" cy="50" r="4" fill="#333"/>
-                            <circle cx="84" cy="50" r="8" fill="white"/>
-                            <circle cx="84" cy="50" r="4" fill="#333"/>
-                            <path d="M40 80 C55 95, 75 95, 88 80" stroke="#333" stroke-width="4" fill="none"/>
-                            <path d="M30 30 C40 10, 88 10, 98 30" stroke="#FF6F00" stroke-width="8" fill="none"/>
-                            <path d="M30 35 L30 55 M98 35 L98 55" stroke="#FF6F00" stroke-width="4" fill="none"/>
-                        </svg>
-                    </div>
-                    
-                    <div id="result-icon" class="mx-auto mb-4">
-                        <!-- Icon will be inserted here -->
-                    </div>
+                    <div id="result-icon" class="mx-auto mb-4"></div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-2">Quiz Selesai!</h3>
                     <p class="text-gray-600 mb-2">Kamu mendapatkan skor:</p>
                     <div class="text-5xl font-bold text-yellow-500 mb-4"><span id="final-score">0</span> / 10</div>
@@ -726,21 +483,7 @@
             </div>
             
             <div class="bg-white rounded-xl shadow-lg p-6 mb-8 relative">
-                <!-- Character -->
-                <div class="absolute -top-10 right-10 character">
-                    <svg class="w-24 h-24" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="64" cy="64" r="60" fill="#81D4FA"/>
-                        <circle cx="44" cy="50" r="8" fill="white"/>
-                        <circle cx="44" cy="50" r="4" fill="#333"/>
-                        <circle cx="84" cy="50" r="8" fill="white"/>
-                        <circle cx="84" cy="50" r="4" fill="#333"/>
-                        <path d="M64 80 A20 20 0 0 0 64 90" stroke="#333" stroke-width="4" fill="none"/>
-                        <path d="M30 30 C40 15, 88 15, 98 30" stroke="#01579B" stroke-width="8" fill="none"/>
-                        <path d="M34 30 L34 45 M94 30 L94 45" stroke="#01579B" stroke-width="4" fill="none"/>
-                    </svg>
-                </div>
-                
-                <div id="podium-container" class="flex justify-center mb-8">
+                <div id="podium-container" class="flex justify-center items-end mb-8 space-x-4 h-48">
                     <!-- Podium will be generated here -->
                 </div>
                 
@@ -764,15 +507,6 @@
                     <p>Belum ada data peringkat. Jadilah yang pertama!</p>
                 </div>
             </div>
-            
-            <div class="text-center">
-                <button onclick="startQuiz()" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full inline-flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd"></path>
-                    </svg>
-                    Ikuti Quiz Sekarang
-                </button>
-            </div>
         </div>
         
         <!-- Footer -->
@@ -781,351 +515,57 @@
         </footer>
     </div>
 
-    <!-- Firebase SDK -->
     <script type="module">
+        // Import fungsi-fungsi yang diperlukan dari Firebase SDK
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp, query } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         // --- START OF FIREBASE CONFIG ---
-        const firebaseConfig = {
-          apiKey: "AIzaSyCjC-COyRNJlolUNS09-W9moNk5Nounhxs",
-          authDomain: "quiz-ipas.firebaseapp.com",
-          projectId: "quiz-ipas",
-          storageBucket: "quiz-ipas.firebasestorage.app",
-          messagingSenderId: "767564017560",
-          appId: "1:767564017560:web:0ce698f8e0af97505645ed",
-          measurementId: "G-2ZEHWCRL1H"
-        };
+        // Konfigurasi Firebase diambil dari variabel global yang disediakan oleh environment.
+        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'misi-cacah-default';
         // --- END OF FIREBASE CONFIG ---
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-        
-        let rankingsCollection;
-        let unsubscribeRankings;
+        // Inisialisasi Firebase
+        let app, auth, db, rankingsCollection, unsubscribeRankings;
 
+        try {
+            app = initializeApp(firebaseConfig);
+            auth = getAuth(app);
+            db = getFirestore(app);
+            // Path koleksi untuk data publik sesuai aturan keamanan
+            rankingsCollection = collection(db, 'artifacts', appId, 'public', 'data', 'rankings');
+        } catch (e) {
+            console.error("Error initializing Firebase:", e);
+        }
+        
         // --- AUTHENTICATION ---
         onAuthStateChanged(auth, async (user) => {
             if (user) {
+                // User sudah terautentikasi, kita bisa mulai mendengarkan data peringkat.
                 console.log("User authenticated with UID:", user.uid);
-                rankingsCollection = collection(db, `peringkat_misi_cacah`);
                 listenForRankings();
             } else {
-                console.log("User not authenticated. Attempting anonymous sign-in.");
+                // User belum terautentikasi, coba login secara anonim atau dengan token.
+                console.log("User not authenticated. Attempting sign-in.");
                 try {
-                    await signInAnonymously(auth);
-                } catch (error) {
-                    console.error("Error during anonymous sign-in:", error);
-                    if (error.code === 'auth/configuration-not-found') {
-                        console.error(
-                            "FIREBASE AUTH ERROR: Anonymous Authentication is likely not enabled. " +
-                            "Please go to your Firebase Console -> Project -> Authentication -> Sign-in method -> and enable 'Anonymous'."
-                        );
-                        alert("Gagal terhubung ke server peringkat. Pastikan 'Anonymous Authentication' telah diaktifkan di proyek Firebase Anda.");
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        await signInAnonymously(auth);
                     }
+                } catch (error) {
+                    console.error("Error during sign-in:", error);
                 }
             }
         });
 
-        // Make functions globally accessible
-        window.showSection = showSection;
-        window.startQuiz = startQuiz;
-        window.beginQuiz = beginQuiz;
-        window.prevQuestion = prevQuestion;
-        window.nextQuestion = nextQuestion;
-        window.selectOption = selectOption;
-        
-        // Global variables
-        let currentSection = 'main-menu';
-        let quizQuestions = [];
-        let currentQuestionIndex = 0;
-        let userAnswers = [];
-        let score = 0;
-        let playerName = "";
-        let quizStartTime;
-        let quizEndTime;
-        let answerSubmitted = false;
-        
-        // All possible questions
-        const allQuestions = [
-            {
-                question: "Bagaimana cara membaca bilangan 5.432?",
-                options: [
-                    "Lima ribu empat ratus tiga puluh dua",
-                    "Lima ribu empat ratus dua puluh tiga",
-                    "Lima ribu tiga ratus empat puluh dua",
-                    "Lima ribu tiga ratus dua puluh empat"
-                ],
-                answer: 0
-            },
-            {
-                question: "Bagaimana cara membaca bilangan 7.809?",
-                options: [
-                    "Tujuh ribu delapan ratus sembilan",
-                    "Tujuh ribu delapan ratus sembilan puluh",
-                    "Tujuh ribu delapan ratus nol sembilan",
-                    "Tujuh ribu delapan ratus kosong sembilan"
-                ],
-                answer: 0
-            },
-            {
-                question: "Bilangan 3.075 dibaca...",
-                options: [
-                    "Tiga ribu tujuh puluh lima",
-                    "Tiga ribu tujuh ratus lima",
-                    "Tiga ribu tujuh lima",
-                    "Tiga ribu nol tujuh puluh lima"
-                ],
-                answer: 0
-            },
-            {
-                question: "Pada bilangan 4.628, angka 6 menempati nilai tempat...",
-                options: [
-                    "Ribuan",
-                    "Ratusan",
-                    "Puluhan",
-                    "Satuan"
-                ],
-                answer: 1
-            },
-            {
-                question: "Pada bilangan 9.153, angka 9 nilainya...",
-                options: [
-                    "9",
-                    "90",
-                    "900",
-                    "9.000"
-                ],
-                answer: 3
-            },
-            {
-                question: "Pada bilangan 2.468, angka yang menempati nilai tempat puluhan adalah...",
-                options: [
-                    "2",
-                    "4",
-                    "6",
-                    "8"
-                ],
-                answer: 2
-            },
-            {
-                question: "Manakah yang lebih besar antara 3.456 dan 3.465?",
-                options: [
-                    "3.456",
-                    "3.465",
-                    "Keduanya sama",
-                    "Tidak bisa dibandingkan"
-                ],
-                answer: 1
-            },
-            {
-                question: "Manakah yang lebih kecil antara 7.890 dan 7.809?",
-                options: [
-                    "7.890",
-                    "7.809",
-                    "Keduanya sama",
-                    "Tidak bisa dibandingkan"
-                ],
-                answer: 1
-            },
-            {
-                question: "Urutkan bilangan berikut dari terkecil ke terbesar: 5.432, 5.423, 5.342, 5.324",
-                options: [
-                    "5.324, 5.342, 5.423, 5.432",
-                    "5.342, 5.324, 5.423, 5.432",
-                    "5.324, 5.423, 5.342, 5.432",
-                    "5.324, 5.342, 5.432, 5.423"
-                ],
-                answer: 0
-            },
-            {
-                question: "Urutkan bilangan berikut dari terbesar ke terkecil: 8.765, 8.756, 8.675, 8.657",
-                options: [
-                    "8.765, 8.756, 8.675, 8.657",
-                    "8.657, 8.675, 8.756, 8.765",
-                    "8.765, 8.675, 8.756, 8.657",
-                    "8.657, 8.756, 8.675, 8.765"
-                ],
-                answer: 0
-            },
-            {
-                question: "Bilangan 6.000 + 300 + 40 + 5 jika ditulis adalah...",
-                options: [
-                    "6.345",
-                    "6.354",
-                    "6.435",
-                    "6.453"
-                ],
-                answer: 0
-            },
-            {
-                question: "Bilangan 9.000 + 700 + 20 + 8 jika ditulis adalah...",
-                options: [
-                    "9.728",
-                    "9.278",
-                    "9.872",
-                    "9.782"
-                ],
-                answer: 0
-            },
-            {
-                question: "Bilangan 4.567 dapat diuraikan menjadi...",
-                options: [
-                    "4.000 + 500 + 60 + 7",
-                    "4.000 + 500 + 67",
-                    "4.000 + 567",
-                    "4 + 5 + 6 + 7"
-                ],
-                answer: 0
-            },
-            {
-                question: "Bilangan 2.035 dapat diuraikan menjadi...",
-                options: [
-                    "2.000 + 35",
-                    "2.000 + 30 + 5",
-                    "2.000 + 0 + 30 + 5",
-                    "2.000 + 0 + 3 + 5"
-                ],
-                answer: 1
-            },
-            {
-                question: "Jika angka 7 menempati nilai tempat ribuan, angka 2 menempati nilai tempat ratusan, angka 9 menempati nilai tempat puluhan, dan angka 3 menempati nilai tempat satuan, maka bilangan yang terbentuk adalah...",
-                options: [
-                    "7.293",
-                    "2.793",
-                    "9.273",
-                    "3.729"
-                ],
-                answer: 0
-            },
-            {
-                question: "Pada bilangan 8.246, nilai tempat angka 4 adalah...",
-                options: [
-                    "Ribuan",
-                    "Ratusan",
-                    "Puluhan",
-                    "Satuan"
-                ],
-                answer: 2
-            },
-            {
-                question: "Pada bilangan 5.678, jumlah nilai angka 5 dan 7 adalah...",
-                options: [
-                    "5.070",
-                    "5.700",
-                    "5.770",
-                    "5.707"
-                ],
-                answer: 1
-            },
-            {
-                question: "Bilangan 3 ribuan + 4 ratusan + 6 puluhan + 9 satuan jika ditulis adalah...",
-                options: [
-                    "3.469",
-                    "3.496",
-                    "3.649",
-                    "3.694"
-                ],
-                answer: 0
-            },
-            {
-                question: "Bilangan 1.234 jika diuraikan menjadi nilai tempatnya adalah...",
-                options: [
-                    "1.000 + 200 + 30 + 4",
-                    "1.000 + 200 + 34",
-                    "1.000 + 234",
-                    "1 + 2 + 3 + 4"
-                ],
-                answer: 0
-            },
-            {
-                question: "Manakah urutan bilangan dari terkecil ke terbesar yang benar?",
-                options: [
-                    "1.234, 1.243, 1.324, 1.342",
-                    "1.342, 1.324, 1.243, 1.234",
-                    "1.234, 1.324, 1.243, 1.342",
-                    "1.342, 1.243, 1.324, 1.234"
-                ],
-                answer: 0
-            },
-            {
-                question: "Manakah pernyataan yang benar?",
-                options: [
-                    "9.876 > 9.867",
-                    "7.654 < 7.645",
-                    "8.765 = 8.756",
-                    "6.543 < 6.534"
-                ],
-                answer: 0
-            },
-            {
-                question: "Bilangan 5.000 + 600 + 70 + 8 jika ditulis adalah...",
-                options: [
-                    "5.678",
-                    "5.687",
-                    "5.768",
-                    "5.786"
-                ],
-                answer: 0
-            },
-            {
-                question: "Pada bilangan 6.789, angka 8 nilainya...",
-                options: [
-                    "8",
-                    "80",
-                    "800",
-                    "8.000"
-                ],
-                answer: 2
-            },
-            {
-                question: "Jika Rudi memiliki uang Rp8.750,00, maka cara membaca bilangan tersebut adalah...",
-                options: [
-                    "Delapan ribu tujuh ratus lima puluh rupiah",
-                    "Delapan ribu tujuh ratus lima puluh",
-                    "Delapan tujuh lima nol rupiah",
-                    "Delapan ribu tujuh ratus lima rupiah"
-                ],
-                answer: 0
-            },
-            {
-                question: "Jika Siti membeli buku seharga Rp3.250,00 dan pensil seharga Rp1.500,00, maka total yang harus dibayar Siti adalah...",
-                options: [
-                    "Rp4.750,00",
-                    "Rp4.850,00",
-                    "Rp4.650,00",
-                    "Rp4.550,00"
-                ],
-                answer: 0
-            }
-        ];
-        
-        // Initialize the app
-        document.addEventListener('DOMContentLoaded', function() {
-            showSection('main-menu');
-        });
-        
-        // Show a specific section
-        function showSection(sectionId) {
-            document.getElementById('main-menu').classList.add('hidden');
-            document.getElementById('materi').classList.add('hidden');
-            document.getElementById('quiz').classList.add('hidden');
-            document.getElementById('ranking').classList.add('hidden');
-            
-            document.getElementById(sectionId).classList.remove('hidden');
-            currentSection = sectionId;
-            
-            document.getElementById(sectionId).classList.add('fade-in');
-        }
-
         // --- Firestore Functions ---
         function listenForRankings() {
-            if (unsubscribeRankings) {
-                unsubscribeRankings();
-            }
+            if (unsubscribeRankings) unsubscribeRankings(); // Hentikan listener sebelumnya jika ada
+            
+            // Kueri untuk mendapatkan semua data peringkat. Pengurutan akan dilakukan di sisi klien.
             const rankingsQuery = query(rankingsCollection);
 
             unsubscribeRankings = onSnapshot(rankingsQuery, (snapshot) => {
@@ -1133,387 +573,332 @@
                 snapshot.forEach((doc) => {
                     rankings.push(doc.data());
                 });
-                
-                // Sort by score (desc) and then by time (asc)
+
+                // Lakukan pengurutan di sisi klien (client-side)
+                // Urutkan berdasarkan skor (tertinggi), lalu berdasarkan waktu (tercepat)
                 rankings.sort((a, b) => {
                     if (b.score !== a.score) {
                         return b.score - a.score;
                     }
-                    return a.time.localeCompare(b.time);
+                    return a.timeTaken - b.timeTaken;
                 });
 
-                // Update ranks
-                rankings.forEach((entry, index) => {
-                    entry.rank = index + 1;
-                });
+                // Ambil 75 peringkat teratas setelah diurutkan
+                const top75Rankings = rankings.slice(0, 75);
 
-                populateRankingTable(rankings);
+                displayRankings(top75Rankings);
+            }, (error) => {
+                console.error("Error fetching rankings:", error);
             });
         }
 
-        async function addRankingToFirestore(name, score, time) {
+        async function addRankingToFirestore(name, score, timeTaken) {
+            if (!rankingsCollection) {
+                console.error("Firestore is not initialized.");
+                return;
+            }
             try {
                 await addDoc(rankingsCollection, {
-                    name,
-                    score,
-                    time,
+                    name: name,
+                    score: score,
+                    timeTaken: timeTaken, // dalam detik
                     createdAt: serverTimestamp()
                 });
                 console.log("Ranking added to Firestore.");
             } catch (error) {
                 console.error("Error adding ranking to Firestore: ", error);
-                alert("Gagal menyimpan skor Anda ke papan peringkat.");
             }
         }
 
-        // Populate ranking table
-        function populateRankingTable(rankingData) {
-            const tableBody = document.getElementById('ranking-table');
-            const podiumContainer = document.getElementById('podium-container');
-            const noRankingMessage = document.getElementById('no-ranking-message');
+        // --- DOM Elements ---
+        const sections = {
+            'main-menu': document.getElementById('main-menu'),
+            'materi': document.getElementById('materi'),
+            'quiz': document.getElementById('quiz'),
+            'ranking': document.getElementById('ranking')
+        };
+        const quizSections = {
+            'start': document.getElementById('quiz-start'),
+            'questions': document.getElementById('quiz-questions'),
+            'result': document.getElementById('quiz-result')
+        };
+        const playerNameInput = document.getElementById('player-name');
+        const currentQuestionEl = document.getElementById('current-question');
+        const totalQuestionsEl = document.getElementById('total-questions');
+        const scoreEl = document.getElementById('score');
+        const questionTextEl = document.getElementById('question-text');
+        const optionsContainerEl = document.getElementById('options-container');
+        const feedbackMessageEl = document.getElementById('feedback-message');
+        const nextBtn = document.getElementById('next-btn');
+        const finalScoreEl = document.getElementById('final-score');
+        const resultMessageEl = document.getElementById('result-message');
+        const resultIconEl = document.getElementById('result-icon');
+        const confettiContainer = document.getElementById('confetti-container');
+        const rankingTable = document.getElementById('ranking-table');
+        const noRankingMessage = document.getElementById('no-ranking-message');
+        const podiumContainer = document.getElementById('podium-container');
 
-            tableBody.innerHTML = '';
-            podiumContainer.innerHTML = '';
+        // --- Quiz variables ---
+        let allQuestions = [];
+        let quizQuestions = [];
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let answered = false;
+        let playerName = "";
+        let quizStartTime;
 
-            if (rankingData.length === 0) {
-                noRankingMessage.classList.remove('hidden');
-                return;
+        // --- Navigation ---
+        const showSection = (sectionId) => {
+            Object.values(sections).forEach(section => section.classList.add('hidden'));
+            if (sections[sectionId]) {
+                sections[sectionId].classList.remove('hidden');
+                sections[sectionId].classList.add('fade-in');
             }
-            
-            noRankingMessage.classList.add('hidden');
+            if (sectionId === 'ranking') {
+                listenForRankings(); // Refresh data saat melihat ranking
+            }
+        };
 
-            // Populate podium
-            const podiumHTML = `
-                <div class="flex items-end space-x-4">
-                    <div class="flex flex-col items-center">
-                        <div class="w-20 h-20 bg-silver rounded-full mb-2 flex items-center justify-center border-4 border-gray-300">
-                            <span class="text-3xl font-bold text-gray-700">2</span>
-                        </div>
-                        <div class="bg-gray-200 w-24 h-28 rounded-t-lg flex items-center justify-center p-2">
-                            <div class="text-center">
-                                <p class="font-bold truncate">${rankingData[1]?.name || '-'}</p>
-                                <p class="text-sm text-gray-600">${rankingData[1]?.score || 0} poin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <svg class="w-8 h-8 text-yellow-500 mb-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-                        <div class="w-24 h-24 bg-gold rounded-full mb-2 flex items-center justify-center border-4 border-yellow-400">
-                            <span class="text-4xl font-bold text-yellow-800">1</span>
-                        </div>
-                        <div class="bg-yellow-100 w-32 h-36 rounded-t-lg flex items-center justify-center p-2">
-                            <div class="text-center">
-                                <p class="font-bold text-lg truncate">${rankingData[0]?.name || '-'}</p>
-                                <p class="text-gray-600">${rankingData[0]?.score || 0} poin</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-20 h-20 bg-bronze rounded-full mb-2 flex items-center justify-center border-4 border-yellow-700">
-                            <span class="text-3xl font-bold text-yellow-900">3</span>
-                        </div>
-                        <div class="bg-yellow-50 w-24 h-24 rounded-t-lg flex items-center justify-center p-2">
-                            <div class="text-center">
-                                <p class="font-bold truncate">${rankingData[2]?.name || '-'}</p>
-                                <p class="text-sm text-gray-600">${rankingData[2]?.score || 0} poin</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-            podiumContainer.innerHTML = podiumHTML;
+        const showQuizSection = (sectionId) => {
+            Object.values(quizSections).forEach(section => section.classList.add('hidden'));
+            if (quizSections[sectionId]) {
+                quizSections[sectionId].classList.remove('hidden');
+            }
+        };
 
-            // Populate table for all rankings
-            rankingData.slice(0, 20).forEach(entry => {
-                const row = document.createElement('tr');
-                row.className = entry.rank % 2 === 0 ? 'bg-white' : 'bg-green-50';
-                
-                const rankCell = document.createElement('td');
-                rankCell.className = 'border border-green-200 p-2 text-center';
-                
-                if (entry.rank <= 3) {
-                    const medalColors = ['text-yellow-500', 'text-gray-400', 'text-yellow-700'];
-                    rankCell.innerHTML = `<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-${entry.rank === 1 ? 'yellow-100' : entry.rank === 2 ? 'gray-100' : 'yellow-50'} ${medalColors[entry.rank-1]} font-bold">${entry.rank}</span>`;
-                } else {
-                    rankCell.textContent = entry.rank;
-                }
-                
-                const nameCell = document.createElement('td');
-                nameCell.className = 'border border-green-200 p-2';
-                nameCell.textContent = entry.name;
-                
-                const scoreCell = document.createElement('td');
-                scoreCell.className = 'border border-green-200 p-2 text-center font-bold';
-                scoreCell.textContent = entry.score;
-                
-                const timeCell = document.createElement('td');
-                timeCell.className = 'border border-green-200 p-2 text-center';
-                timeCell.textContent = entry.time;
-                
-                row.appendChild(rankCell);
-                row.appendChild(nameCell);
-                row.appendChild(scoreCell);
-                row.appendChild(timeCell);
-                
-                tableBody.appendChild(row);
-            });
-        }
-        
-        // Start the quiz
-        function startQuiz() {
+        // --- Quiz Logic ---
+        const startQuiz = () => {
             showSection('quiz');
-            document.getElementById('quiz-start').classList.remove('hidden');
-            document.getElementById('quiz-questions').classList.add('hidden');
-            document.getElementById('quiz-result').classList.add('hidden');
-            document.getElementById('player-name').value = '';
-        }
-        
-        // Begin the quiz (after clicking start button)
-        function beginQuiz() {
-            playerName = document.getElementById('player-name').value.trim();
+            showQuizSection('start');
+        };
+
+        const beginQuiz = () => {
+            playerName = playerNameInput.value.trim();
             if (!playerName) {
-                alert('Silakan masukkan nama kamu terlebih dahulu!');
+                playerNameInput.focus();
+                playerNameInput.classList.add('border-red-500');
                 return;
             }
-            
+            playerNameInput.classList.remove('border-red-500');
+
+            showQuizSection('questions');
+            quizQuestions = allQuestions.sort(() => 0.5 - Math.random()).slice(0, 10);
             currentQuestionIndex = 0;
-            userAnswers = [];
             score = 0;
             quizStartTime = new Date();
-            quizQuestions = getRandomQuestions(allQuestions, 10);
+            totalQuestionsEl.textContent = quizQuestions.length;
+            displayQuestion();
+        };
+
+        const displayQuestion = () => {
+            answered = false;
+            feedbackMessageEl.classList.remove('show');
+            nextBtn.classList.add('hidden');
+            const question = quizQuestions[currentQuestionIndex];
             
-            document.getElementById('quiz-start').classList.add('hidden');
-            document.getElementById('quiz-questions').classList.remove('hidden');
-            document.getElementById('quiz-result').classList.add('hidden');
-            
-            document.getElementById('current-question').textContent = '1';
-            document.getElementById('total-questions').textContent = quizQuestions.length;
-            document.getElementById('score').textContent = '0';
-            
-            answerSubmitted = false;
-            hideFeedback();
-            loadQuestion(0);
-            
-            document.getElementById('prev-btn').disabled = true;
-            document.getElementById('next-btn').textContent = 'Selanjutnya';
-            document.getElementById('next-btn').innerHTML = 'Selanjutnya <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>';
-        }
-        
-        // Get random questions
-        function getRandomQuestions(questions, count) {
-            const shuffled = [...questions].sort(() => 0.5 - Math.random());
-            return shuffled.slice(0, count);
-        }
-        
-        // Load a specific question
-        function loadQuestion(index) {
-            const question = quizQuestions[index];
-            document.getElementById('question-text').textContent = question.question;
-            
-            const optionsContainer = document.getElementById('options-container');
-            optionsContainer.innerHTML = '';
-            
-            answerSubmitted = false;
-            hideFeedback();
-            
-            question.options.forEach((option, i) => {
-                const optionDiv = document.createElement('div');
-                optionDiv.className = 'quiz-option p-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50';
-                if (userAnswers[index] === i) {
-                    optionDiv.classList.add('selected');
-                }
-                
-                optionDiv.innerHTML = `
-                    <div class="flex items-center">
-                        <div class="w-6 h-6 rounded-full border-2 border-gray-400 flex items-center justify-center mr-3">
-                            <span class="option-letter font-bold">${String.fromCharCode(65 + i)}</span>
-                        </div>
-                        <span>${option}</span>
-                    </div>
-                `;
-                
-                optionDiv.addEventListener('click', () => selectOption(index, i));
-                optionsContainer.appendChild(optionDiv);
+            currentQuestionEl.textContent = currentQuestionIndex + 1;
+            scoreEl.textContent = score;
+            questionTextEl.innerHTML = question.question; // Use innerHTML for potential formatting
+            optionsContainerEl.innerHTML = '';
+
+            const shuffledOptions = [...question.options].sort(() => 0.5 - Math.random());
+
+            shuffledOptions.forEach(option => {
+                const optionButton = document.createElement('button');
+                optionButton.className = 'quiz-option w-full text-left p-4 rounded-lg border-2 border-gray-200 transition-all duration-200';
+                optionButton.innerHTML = option;
+                optionButton.onclick = () => selectAnswer(optionButton, option, question.answer);
+                optionsContainerEl.appendChild(optionButton);
             });
-            
-            document.getElementById('current-question').textContent = index + 1;
-            document.getElementById('prev-btn').disabled = index === 0;
-            
-            if (index === quizQuestions.length - 1) {
-                document.getElementById('next-btn').textContent = 'Selesai';
-                document.getElementById('next-btn').innerHTML = 'Selesai <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>';
-            } else {
-                document.getElementById('next-btn').textContent = 'Selanjutnya';
-                document.getElementById('next-btn').innerHTML = 'Selanjutnya <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>';
-            }
-        }
-        
-        // Select an option
-        function selectOption(questionIndex, optionIndex) {
-            if (answerSubmitted) return;
-            
-            const question = quizQuestions[questionIndex];
-            const isCorrect = optionIndex === question.answer;
-            
-            userAnswers[questionIndex] = optionIndex;
-            
-            const options = document.querySelectorAll('.quiz-option');
-            options.forEach((option, i) => {
-                option.classList.remove('selected', 'correct', 'incorrect');
-                if (i === optionIndex) {
-                    option.classList.add('selected');
-                }
-            });
-            
-            const selectedOption = options[optionIndex];
+        };
+
+        const selectAnswer = (button, selectedOption, correctAnswer) => {
+            if (answered) return;
+            answered = true;
+
+            const isCorrect = selectedOption === correctAnswer;
             
             if (isCorrect) {
-                selectedOption.classList.add('correct');
+                score++;
+                showFeedback(true, "Jawaban Benar!");
             } else {
-                selectedOption.classList.add('incorrect');
-                options[question.answer].classList.add('correct');
+                showFeedback(false, `Jawaban salah. Yang benar adalah: ${correctAnswer}`);
             }
+
+            Array.from(optionsContainerEl.children).forEach(btn => {
+                btn.disabled = true;
+                if (btn.innerHTML === correctAnswer) {
+                    btn.classList.add('correct');
+                } else if (btn === button) {
+                    btn.classList.add('incorrect');
+                }
+            });
+
+            nextBtn.classList.remove('hidden');
+            if (currentQuestionIndex === quizQuestions.length - 1) {
+                nextBtn.textContent = "Lihat Hasil";
+            }
+        };
+
+        const nextQuestion = () => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizQuestions.length) {
+                displayQuestion();
+            } else {
+                endQuiz();
+            }
+        };
+
+        const endQuiz = () => {
+            const timeTaken = Math.round((new Date() - quizStartTime) / 1000); // in seconds
+            showQuizSection('result');
+            finalScoreEl.textContent = score;
+
+            let message = "";
+            let icon = "";
+
+            if (score >= 9) {
+                message = "Luar biasa! Kamu adalah master bilangan cacah!";
+                icon = '🏆';
+                createConfetti();
+            } else if (score >= 7) {
+                message = "Bagus sekali! Pemahamanmu sudah sangat baik!";
+                icon = '🎉';
+            } else if (score >= 5) {
+                message = "Cukup baik! Teruslah berlatih ya!";
+                icon = '👍';
+            } else {
+                message = "Jangan menyerah! Coba pelajari materinya lagi.";
+                icon = '💪';
+            }
+            resultMessageEl.textContent = message;
+            resultIconEl.innerHTML = `<div class="text-6xl">${icon}</div>`;
             
-            showFeedback(isCorrect);
-            answerSubmitted = true;
-        }
-        
-        // Show feedback message
-        function showFeedback(isCorrect) {
-            const feedbackMessage = document.getElementById('feedback-message');
-            
+            // Simpan skor ke Firestore
+            addRankingToFirestore(playerName, score, timeTaken);
+        };
+
+        const showFeedback = (isCorrect, message) => {
+            feedbackMessageEl.textContent = message;
+            feedbackMessageEl.className = 'feedback-message mt-4 p-3 rounded-lg text-center font-bold show';
             if (isCorrect) {
-                feedbackMessage.className = 'feedback-message mt-4 p-3 rounded-lg text-center font-bold bg-green-100 text-green-800';
-                feedbackMessage.innerHTML = `
-                    <div class="flex items-center justify-center">
-                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                        Selamat! Jawaban kamu benar.
-                    </div>
-                `;
+                feedbackMessageEl.classList.add('bg-green-100', 'text-green-800');
             } else {
-                feedbackMessage.className = 'feedback-message mt-4 p-3 rounded-lg text-center font-bold bg-red-100 text-red-800';
-                feedbackMessage.innerHTML = `
-                    <div class="flex items-center justify-center">
-                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
-                        Maaf, jawaban kamu salah.
-                    </div>
-                `;
+                feedbackMessageEl.classList.add('bg-red-100', 'text-red-800');
             }
-            
-            setTimeout(() => {
-                feedbackMessage.classList.add('show');
-            }, 100);
-        }
+        };
         
-        // Hide feedback message
-        function hideFeedback() {
-            const feedbackMessage = document.getElementById('feedback-message');
-            feedbackMessage.className = 'feedback-message mt-4 p-3 rounded-lg text-center font-bold';
-            feedbackMessage.innerHTML = '';
-        }
-        
-        // Go to previous question
-        function prevQuestion() {
-            if (currentQuestionIndex > 0) {
-                currentQuestionIndex--;
-                loadQuestion(currentQuestionIndex);
-            }
-        }
-        
-        // Go to next question or finish quiz
-        function nextQuestion() {
-            if (userAnswers[currentQuestionIndex] === undefined) {
-                alert('Silakan jawab pertanyaan ini terlebih dahulu!');
+        // --- Ranking Display ---
+        const displayRankings = (rankings) => {
+            if (rankings.length === 0) {
+                noRankingMessage.classList.remove('hidden');
+                rankingTable.innerHTML = '';
+                podiumContainer.innerHTML = '';
                 return;
             }
 
-            if (currentQuestionIndex < quizQuestions.length - 1) {
-                currentQuestionIndex++;
-                loadQuestion(currentQuestionIndex);
-            } else {
-                finishQuiz();
-            }
-        }
-        
-        // Finish the quiz and show results
-        async function finishQuiz() {
-            quizEndTime = new Date();
-            const timeTaken = Math.floor((quizEndTime - quizStartTime) / 1000);
-            const minutes = Math.floor(timeTaken / 60);
-            const seconds = timeTaken % 60;
-            const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            noRankingMessage.classList.add('hidden');
+            displayPodium(rankings.slice(0, 3));
+            displayRankingTable(rankings);
+        };
+
+        const displayPodium = (top3) => {
+            podiumContainer.innerHTML = '';
+            const podiumOrder = [1, 0, 2]; // Index for 2nd, 1st, 3rd
+            const heights = ['h-32', 'h-40', 'h-24'];
+            const colors = ['bg-slate-400', 'bg-amber-400', 'bg-amber-600'];
+            const icons = ['🥈', '🥇', '🥉'];
             
-            score = 0;
-            userAnswers.forEach((answer, index) => {
-                if (answer === quizQuestions[index].answer) {
-                    score++;
+            podiumOrder.forEach((i, podiumIndex) => {
+                if(top3[i]) {
+                    const player = top3[i];
+                    const podiumEl = document.createElement('div');
+                    podiumEl.className = `flex flex-col items-center justify-end w-1/3`;
+                    podiumEl.innerHTML = `
+                        <div class="font-bold text-lg truncate">${player.name}</div>
+                        <div class="text-sm text-gray-600">${player.score}/10</div>
+                        <div class="${heights[podiumIndex]} ${colors[podiumIndex]} w-full rounded-t-lg flex items-center justify-center text-4xl font-bold shadow-lg">
+                           ${icons[podiumIndex]}
+                        </div>
+                    `;
+                    podiumContainer.appendChild(podiumEl);
                 }
             });
-            
-            document.getElementById('quiz-questions').classList.add('hidden');
-            document.getElementById('quiz-result').classList.remove('hidden');
-            document.getElementById('final-score').textContent = score;
-            
-            const resultMessage = document.getElementById('result-message');
-            const resultIcon = document.getElementById('result-icon');
-            
-            if (score >= 8) {
-                resultMessage.textContent = "Hebat! Kamu menguasai materi dengan sangat baik!";
-                resultIcon.innerHTML = `<svg class="w-20 h-20 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>`;
-                createConfetti();
-            } else if (score >= 6) {
-                resultMessage.textContent = "Bagus! Kamu sudah cukup memahami materi.";
-                resultIcon.innerHTML = `<svg class="w-20 h-20 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>`;
-            } else {
-                resultMessage.textContent = "Jangan menyerah! Coba pelajari lagi materinya ya.";
-                resultIcon.innerHTML = `<svg class="w-20 h-20 text-gray-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v4a1 1 0 102 0V7zm0 8a1 1 0 10-2 0 1 1 0 102 0z" clip-rule="evenodd"></path></svg>`;
-            }
-            
-            if (score > 0) {
-                await addRankingToFirestore(playerName, score, timeString);
-            }
-        }
-        
-        // Create confetti effect for high scores
-        function createConfetti() {
-            const confettiContainer = document.getElementById('confetti-container');
+        };
+
+        const displayRankingTable = (rankings) => {
+             rankingTable.innerHTML = '';
+             rankings.forEach((rank, index) => {
+                const row = document.createElement('tr');
+                row.className = index % 2 === 0 ? 'bg-green-50' : 'bg-white';
+                row.innerHTML = `
+                    <td class="border p-2 text-center font-bold">${index + 1}</td>
+                    <td class="border p-2">${rank.name}</td>
+                    <td class="border p-2 text-center">${rank.score}</td>
+                    <td class="border p-2 text-center">${rank.timeTaken} detik</td>
+                `;
+                rankingTable.appendChild(row);
+             });
+        };
+
+        // --- Effects ---
+        const createConfetti = () => {
             confettiContainer.innerHTML = '';
-            
             const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
-            
             for (let i = 0; i < 100; i++) {
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 8 + 5;
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
                 confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-                
-                confetti.style.animation = `
-                    fadeIn 0.5s ease-in forwards,
-                    fall ${Math.random() * 3 + 2}s ease-in-out forwards ${Math.random() * 2}s
-                `;
-                
+                confetti.style.left = `${Math.random() * 100}%`;
+                confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear ${Math.random() * 2}s infinite`;
                 confettiContainer.appendChild(confetti);
             }
-            
             const style = document.createElement('style');
-            style.textContent = `
+            style.innerHTML = `
                 @keyframes fall {
-                    0% { transform: translateY(0) rotate(0); opacity: 1; }
-                    100% { transform: translateY(${window.innerHeight}px) rotate(360deg); opacity: 0; }
+                    to {
+                        transform: translateY(100vh) rotate(${Math.random() * 720}deg);
+                        opacity: 0;
+                    }
                 }
             `;
-            document.head.appendChild(style);
-        }
-        
-        document.head.insertAdjacentHTML('beforeend', `
-            <style>
-                .bg-gold { background-color: #ffd700; }
-                .bg-silver { background-color: #c0c0c0; }
-                .bg-bronze { background-color: #cd7f32; }
-            </style>
-        `);
+            confettiContainer.appendChild(style);
+            setTimeout(() => confettiContainer.innerHTML = '', 5000);
+        };
+
+        // --- Content Population ---
+        const populateQuestions = () => {
+            allQuestions = [
+                { question: "Lambang bilangan dari 'sembilan ribu dua ratus tujuh' adalah...", options: ["9.270", "9.027", "9.207", "9.200"], answer: "9.207" },
+                { question: "Bilangan 5.648 dibaca...", options: ["Lima ribu enam ratus empat delapan", "Lima ribu enam ratus empat puluh delapan", "Lima enam empat delapan", "Lima ribu empat ratus enam puluh delapan"], answer: "Lima ribu enam ratus empat puluh delapan" },
+                { question: "Pada bilangan 8.345, angka yang menempati nilai tempat ratusan adalah...", options: ["8", "3", "4", "5"], answer: "3" },
+                { question: "Nilai angka 7 pada bilangan 7.912 adalah...", options: ["70", "700", "7.000", "7"], answer: "7.000" },
+                { question: "Manakah bilangan yang lebih besar dari 6.590?", options: ["6.509", "6.499", "6.591", "5.999"], answer: "6.591" },
+                { question: "Urutan bilangan dari yang terkecil ke terbesar yang benar adalah...", options: ["2.150, 2.510, 2.015", "2.015, 2.150, 2.510", "2.510, 2.150, 2.015", "2.015, 2.510, 2.150"], answer: "2.015, 2.150, 2.510" },
+                { question: "3.000 + 400 + 50 + 6 = ...", options: ["3.456", "3.0456", "34.56", "3.4056"], answer: "3.456" },
+                { question: "Bentuk dekomposisi dari bilangan 9.081 adalah...", options: ["900+80+1", "9.000+800+1", "9.000+80+1", "9.000+8+1"], answer: "9.000+80+1" },
+                { question: "Aku adalah bilangan yang terdiri dari 5 ribuan, 0 ratusan, 2 puluhan, dan 9 satuan. Siapakah aku?", options: ["5.290", "5.029", "5.209", "5.092"], answer: "5.029" },
+                { question: "Tanda perbandingan yang tepat untuk 4.567 ... 4.576 adalah...", options: ["<", ">", "=", "≠"], answer: "<" },
+                { question: "Bilangan yang terletak di antara 3.125 dan 3.127 adalah...", options: ["3.124", "3.128", "3.126", "3.120"], answer: "3.126" },
+                { question: "Angka 2 pada bilangan 1.234 menempati nilai tempat...", options: ["Satuan", "Puluhan", "Ratusan", "Ribuan"], answer: "Ratusan" },
+            ];
+        };
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            populateQuestions();
+            showSection('main-menu');
+        });
+
+        // --- Expose functions to global scope for onclick attributes ---
+        window.showSection = showSection;
+        window.startQuiz = startQuiz;
+        window.beginQuiz = beginQuiz;
+        window.nextQuestion = nextQuestion;
+
     </script>
 </body>
 </html>
