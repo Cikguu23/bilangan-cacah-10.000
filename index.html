@@ -194,7 +194,7 @@
                         </div>
                     </div>
                     
-                    <button onclick="showSection('materi')" class="btn bg-white text-purple-600 font-bold py-3 px-8 rounded-full text-lg">
+                    <button id="hero-start-materi-btn" class="btn bg-white text-purple-600 font-bold py-3 px-8 rounded-full text-lg">
                         Mulai Belajar
                     </button>
                 </div>
@@ -248,7 +248,7 @@
                     </div>
                     <div class="p-6 text-center">
                         <p class="text-gray-600 mb-4">Pelajari konsep bilangan cacah sampai 10.000</p>
-                        <button onclick="showSection('materi')" class="btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full">
+                        <button id="card-start-materi-btn" class="btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full">
                             Mulai Belajar
                         </button>
                     </div>
@@ -263,7 +263,7 @@
                     </div>
                     <div class="p-6 text-center">
                         <p class="text-gray-600 mb-4">Tantang dirimu dengan soal-soal menarik</p>
-                        <button onclick="startQuiz()" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full">
+                        <button id="card-start-quiz-btn" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full">
                             Mulai Quiz
                         </button>
                     </div>
@@ -278,7 +278,7 @@
                     </div>
                     <div class="p-6 text-center">
                         <p class="text-gray-600 mb-4">Lihat peringkat terbaik dari pemain</p>
-                        <button onclick="showSection('ranking')" class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full">
+                        <button id="card-show-ranking-btn" class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full">
                             Lihat Ranking
                         </button>
                     </div>
@@ -290,7 +290,7 @@
         <div id="materi" class="hidden">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-3xl font-bold text-blue-600">Materi Pembelajaran</h2>
-                <button onclick="showSection('main-menu')" class="btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
+                <button id="back-from-materi-btn" class="btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
                     </svg>
@@ -385,7 +385,7 @@
             </div>
             
             <div class="text-center">
-                <button onclick="startQuiz()" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full inline-flex items-center">
+                <button id="materi-start-quiz-btn" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full inline-flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 10.586V7z" clip-rule="evenodd"></path>
                     </svg>
@@ -398,7 +398,7 @@
         <div id="quiz" class="hidden">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-3xl font-bold text-yellow-600">Quiz Matematika</h2>
-                <button onclick="showSection('main-menu')" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
+                <button id="back-from-quiz-btn" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
                     </svg>
@@ -416,7 +416,7 @@
                         <input type="text" id="player-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Nama Kamu">
                     </div>
                     
-                    <button onclick="beginQuiz()" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full">
+                    <button id="begin-quiz-btn" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full">
                         Mulai Quiz
                     </button>
                 </div>
@@ -441,7 +441,7 @@
                     </div>
                     
                     <div class="flex justify-end">
-                        <button id="next-btn" onclick="nextQuestion()" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full flex items-center hidden">
+                        <button id="next-btn" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full flex items-center hidden">
                             Selanjutnya
                             <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
@@ -459,10 +459,10 @@
                     <div class="text-5xl font-bold text-yellow-500 mb-4"><span id="final-score">0</span> / 10</div>
                     <p id="result-message" class="text-lg mb-6">Pesan hasil akan muncul di sini</p>
                     <div class="flex flex-col md:flex-row justify-center gap-4">
-                        <button onclick="startQuiz()" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full">
+                        <button id="retry-quiz-btn" class="btn bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full">
                             Coba Lagi
                         </button>
-                        <button onclick="showSection('main-menu')" class="btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full">
+                        <button id="back-to-menu-from-result-btn" class="btn bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full">
                             Kembali ke Menu
                         </button>
                     </div>
@@ -474,7 +474,7 @@
         <div id="ranking" class="hidden">
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-3xl font-bold text-green-600">Ranking Terbaik</h2>
-                <button onclick="showSection('main-menu')" class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
+                <button id="back-from-ranking-btn" class="btn bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full flex items-center">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
                     </svg>
@@ -519,7 +519,7 @@
         // Import fungsi-fungsi yang diperlukan dari Firebase SDK
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, collection, addDoc, onSnapshot, serverTimestamp, query } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         // --- START OF FIREBASE CONFIG ---
         // Konfigurasi Firebase diambil dari variabel global yang disediakan oleh environment.
@@ -737,6 +737,8 @@
             nextBtn.classList.remove('hidden');
             if (currentQuestionIndex === quizQuestions.length - 1) {
                 nextBtn.textContent = "Lihat Hasil";
+            } else {
+                nextBtn.textContent = "Selanjutnya";
             }
         };
 
@@ -763,7 +765,7 @@
                 createConfetti();
             } else if (score >= 7) {
                 message = "Bagus sekali! Pemahamanmu sudah sangat baik!";
-                icon = '🎉';
+                icon = '�';
             } else if (score >= 5) {
                 message = "Cukup baik! Teruslah berlatih ya!";
                 icon = '👍';
@@ -888,17 +890,29 @@
         };
 
         // --- Initialization ---
+        function addEventListeners() {
+            document.getElementById('hero-start-materi-btn').addEventListener('click', () => showSection('materi'));
+            document.getElementById('card-start-materi-btn').addEventListener('click', () => showSection('materi'));
+            document.getElementById('card-start-quiz-btn').addEventListener('click', startQuiz);
+            document.getElementById('card-show-ranking-btn').addEventListener('click', () => showSection('ranking'));
+            document.getElementById('back-from-materi-btn').addEventListener('click', () => showSection('main-menu'));
+            document.getElementById('materi-start-quiz-btn').addEventListener('click', startQuiz);
+            document.getElementById('back-from-quiz-btn').addEventListener('click', () => showSection('main-menu'));
+            document.getElementById('begin-quiz-btn').addEventListener('click', beginQuiz);
+            document.getElementById('next-btn').addEventListener('click', nextQuestion);
+            document.getElementById('retry-quiz-btn').addEventListener('click', startQuiz);
+            document.getElementById('back-to-menu-from-result-btn').addEventListener('click', () => showSection('main-menu'));
+            document.getElementById('back-from-ranking-btn').addEventListener('click', () => showSection('main-menu'));
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             populateQuestions();
+            addEventListeners();
             showSection('main-menu');
         });
-
-        // --- Expose functions to global scope for onclick attributes ---
-        window.showSection = showSection;
-        window.startQuiz = startQuiz;
-        window.beginQuiz = beginQuiz;
-        window.nextQuestion = nextQuestion;
 
     </script>
 </body>
 </html>
+"
+I have fixed the iss�
