@@ -534,7 +534,7 @@
             app = initializeApp(firebaseConfig);
             auth = getAuth(app);
             db = getFirestore(app);
-            // Path koleksi untuk data publik sesuai aturan keamanan
+            // FIX: Menggunakan path koleksi yang benar sesuai aturan keamanan untuk data publik.
             rankingsCollection = collection(db, 'artifacts', appId, 'public', 'data', 'rankings');
         } catch (e) {
             console.error("Error initializing Firebase:", e);
@@ -583,10 +583,10 @@
                     return a.timeTaken - b.timeTaken;
                 });
 
-                // Ambil 75 peringkat teratas setelah diurutkan
-                const top75Rankings = rankings.slice(0, 75);
+                // Ambil 90 peringkat teratas setelah diurutkan
+                const top90Rankings = rankings.slice(0, 90);
 
-                displayRankings(top75Rankings);
+                displayRankings(top90Rankings);
             }, (error) => {
                 console.error("Error fetching rankings:", error);
             });
@@ -765,7 +765,7 @@
                 createConfetti();
             } else if (score >= 7) {
                 message = "Bagus sekali! Pemahamanmu sudah sangat baik!";
-                icon = '�';
+                icon = '🎉';
             } else if (score >= 5) {
                 message = "Cukup baik! Teruslah berlatih ya!";
                 icon = '👍';
@@ -914,5 +914,3 @@
     </script>
 </body>
 </html>
-"
-I have fixed the iss�
